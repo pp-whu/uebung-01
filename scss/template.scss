@@ -1,0 +1,45 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-breadcrumbs;
+@include foundation-visibility-classes;
+@include foundation-float-classes; // Reset
+
+.outer {
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.symbol {
+  width: 50%;
+  height: auto;
+  color: $black;
+}
+
+main {
+  padding: 0 $grid-gutter/4;
+}
+
+#skiplinks {
+  position: absolute;
+  list-style: none;
+  width: 16rem;
+  top: 1rem;
+  z-index: 101;
+  margin: 0;
+
+  li {
+    position: absolute;
+    width: 100%;
+    background-color: $blue;
+  }
+}
+
+.green {
+  background: $beige;
+}

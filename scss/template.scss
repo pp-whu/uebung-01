@@ -14,17 +14,6 @@
   width: 100%;
 }
 
-
-.symbol {
-  width: 50%;
-  height: auto;
-  color: $black;
-}
-
-main {
-  padding: 0 $grid-gutter/4;
-}
-
 #skiplinks {
   position: absolute;
   list-style: none;
@@ -40,6 +29,29 @@ main {
   }
 }
 
+.symbol {
+  width: rem-calc(32);
+  height: auto;
+}
+
+main {
+  padding: 0 $grid-gutter/4;
+}
+
+
 .green {
   background: $beige;
+}
+
+// layout
+// navigation
+#main-menu {
+  list-style: none;
+  li {
+    list-style-type: none;
+    a {
+      display: block;
+      padding: $grid-gutter/10;
+    }
+  }
 }

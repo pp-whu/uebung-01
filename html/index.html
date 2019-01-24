@@ -14,9 +14,11 @@
     <header class="header green">
       <div class="wrap">
         <nav class="main-nav">
-          <button class="menu-button" onclick="toggle()" type="button" name="button">
-            <img class="symbol" src="img/bars.svg" alt="">
-            <span class="menu-button-label">Menü</span>
+          <button class="menu-button toggle" data-for="main-menu" title="Menü ein-/ausblenden" aria-haspopup="true" aria-expanded="false">
+            <svg role="img" class="symbol" aria-hidden="true" focusable="false">
+              <use xlink:href="img/icons.svg#menu"></use>
+            </svg>
+            <span class="menu-button-label show-for-sr">Menü</span>
           </button>
           <ul id="main-menu">
             <li><a href="#leckeres">Leckeres</a></li>
@@ -29,35 +31,46 @@
         </nav>
         <nav class="social-nav">
           <ul id="social-menu">
-            <li><a href="#"><img src="img/facebook.svg" alt=""></a><li>
+            <li><a href="#">
+                <i class="a-icon">
+                  <svg role="img" class="f-icon" aria-hidden="true" focusable="false">
+                    <use xlink:href="/img/icons.svg#facebook">
+                    </use>
+                  </svg>
+                </i></a>
+            <li>
           </ul>
         </nav>
-        <div class="bb-logo">
-          <img src="img/bb_logo.png" alt="">
+        <div class="logos">
+          <img class="beans" src="/img/bb-logo.svg" alt="">
+          <img class="pfennigparade" src="/img/pp-logo.svg" alt="">
         </div>
-        <div class="pp-logo">
-          <img src="img/pp_logo.svg" alt="">
-        </div>
-      </div>
+
     </header>
     <main class="main">
-      <section class="section wrap">
-        <h1></h1>
-        <p></p>
+      <section class="section wrap bg-white">
+        <h1>Das Beans & Books ist euer Büchercafé in München</h1>
+        <p>Bücher für jeden Geschmack und erlesener Kaffee. Entdeckt hausgemachte Köstlichkeiten und stöbert in unserer breiten Bücherauswahl … oder lasst einfach nur die Seele baumeln</p>
       </section>
-      <section class="section">
-        <img src="" alt="">
+      <section class="section slider">
+        <img src="/img/bb.jpg" alt="">
       </section>
       <section class="section wrap">
         <div class="accordion">
-          <article class="a_item">
-            <a class="a_link" href="">
-              <h3></h3>
-              <i></i>
-            </a>
-            <div class="a_content">
-              <div class="a_inner">
-                <h4></h4>
+          <article class="a-item">
+            <h2>Leckeres</h2>
+            <a class="a-link" href="">
+              <h3 class="a-header">Getränke</h3>
+              <i class="a-icon">
+                <svg role="img" class="arrow-down" aria-hidden="true" focusable="false">
+                  <use xlink:href="/img/icons.svg#arrow-down">
+                  </use>
+                </svg>
+              </i></a>
+                  </a>
+            <div class="a-content">
+              <div class="a-inner">
+                <h3></h3>
                 <p></p>
               </div>
             </div>
@@ -93,10 +106,11 @@
           </article>
         </div>
       </section>
-      <section class="section green">
+      <section class="section">
         <div class="wrap">
           <h2>Unser Anspruch</h2>
-          <p>Wir legen großen Wert auf qualitativ hochwertige Lebensmittel: sie sind frisch, regional, ökologisch und fair – aber vor allem sozial. Daher verzichten wir bewusst auf ein reines Bio Sortiment. Fairness soll am Ende auch bezahlbar sein. Alle Speisen stammen aus eigener Rezeptur und Herstellung ohne chemische Zusätze.</p>
+          <p>Wir legen großen Wert auf qualitativ hochwertige Lebensmittel: sie sind frisch, regional, ökologisch und fair – aber vor allem sozial. Daher verzichten wir bewusst auf ein reines Bio Sortiment. Fairness soll am Ende auch bezahlbar sein.
+            Alle Speisen stammen aus eigener Rezeptur und Herstellung ohne chemische Zusätze.</p>
         </div>
       </section>
       <section class="section wrap">
@@ -113,10 +127,10 @@
             <div class="col">
               <h3>Beans and Books</h3>
               <p>Knorrstraße 8
-                  80807 München
-                  Telefon: 089/8393-4700</p>
+                80807 München
+                Telefon: 089/8393-4700</p>
             </div>
-        </div>
+          </div>
         </div>
       </section>
     </main>
@@ -133,10 +147,8 @@
     </footer>
   </div>
 
-  <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-   <script src="js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

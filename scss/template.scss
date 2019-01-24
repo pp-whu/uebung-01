@@ -29,29 +29,215 @@
   }
 }
 
-.symbol {
-  width: rem-calc(32);
-  height: auto;
-}
-
 main {
   padding: 0 $grid-gutter/4;
 }
 
-
 .green {
-  background: $beige;
+  background: $green;
+}
+// layout
+// header
+
+.wrap {
+  max-width: $global-width;
+  margin: 0 auto;
+}
+//Header
+// Menu Button
+
+.symbol {
+  width: rem-calc(40);
+  height: rem-calc(40);
+  position: absolute;
+  top: rem-calc(-46);
 }
 
-// layout
+.menu-button {
+  cursor: pointer;
+  margin: $grid-gutter/4;
+
+  &.active {
+    .menu-button-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+.menu-button-box {
+  width: rem-calc(50);
+  height: rem-calc(50);
+  padding: rem-calc(10);
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: transform 0.25s;
+  // background-color: $dark-blue;
+}
+
+.menu-button-label {
+  color: $white;
+  vertical-align: middle;
+}
+
+.menu-button-inner {
+  display: block;
+  top: 100%;
+  margin-top: rem-calc(-27);
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &,
+  &::after,
+  &::before {
+    width: rem-calc(30);
+    height: rem-calc(5);
+    background-color: $white;
+    border-radius: rem-calc(1);
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+  }
+
+  &::before {
+    top: rem-calc(11);
+    right: rem-calc(0);
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
+
+  &::after {
+    bottom: rem-calc(11);
+    right: rem-calc(0);
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}
+@include breakpoint(xxlarge) {
+  .menu-button {
+    display: none;
+  }
+}
 // navigation
+
+.main-nav {
+  position: relative;
+}
+
 #main-menu {
   list-style: none;
+
   li {
     list-style-type: none;
+
     a {
+      border-left: 8px solid $green;
+      color: $black;
       display: block;
-      padding: $grid-gutter/10;
+      font-size: rem-calc(26);
+      padding: $grid-gutter/8 $grid-gutter/2;
+      transition: border-color 0.25s;
+
+      &:focus,
+      &:hover {
+        border-color: $black;
+      }
     }
+  }
+}
+// social-nav
+
+.social-nav {
+  li {
+    list-style-type: none;
+  }
+}
+
+.f-icon {
+  width: rem-calc(40);
+  height: auto;
+}
+// logos
+
+.logos {
+  width: 100%;
+  padding-top: $grid-gutter;
+  padding-bottom: $grid-gutter/6;
+}
+
+.beans,
+.pfennigparade {
+  display: block;
+  margin: auto;
+}
+
+.pfennigparade {
+  width: rem-calc(120);
+}
+
+.beans {
+  width: 50%;
+  height: auto;
+  margin-bottom: $grid-gutter*1.5;
+}
+
+.wrap {
+  padding-top: $grid-gutter;
+}
+//  accordion
+
+.a-item {
+  margin: $grid-gutter/4 0;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.a-link {
+  display: block;
+  position: relative;
+  background: $green;
+  padding: $grid-gutter/4;
+  transition: background 0.25s;
+
+  &:focus,
+  &:hover {
+    background: $black;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.a-icon {
+  display: inline-block;
+  position: absolute;
+  top: rem-calc(-39);
+  right: rem-calc(15);
+
+  .arrow-down {
+    width: rem-calc(68);
+    height: rem-calc(150);
   }
 }

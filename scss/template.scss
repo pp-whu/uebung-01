@@ -43,12 +43,21 @@ main {
 }
 // layout
 // header Menu Button
+.button {
+  padding-top: $grid-gutter;
+  @include breakpoint (xlarge) {
+    padding-top: $grid-gutter/4;
+  }
+}
 
 .header-symbol {
   width: rem-calc(40);
   height: rem-calc(40);
   position: absolute;
   top: rem-calc(-46);
+  @include breakpoint (xlarge) {
+    display: none;
+  }
 }
 
 .menu-button {
@@ -60,6 +69,7 @@ main {
   vertical-align: middle;
 }
 // navigation
+
 .main-nav {
   position: relative;
 }
@@ -85,7 +95,11 @@ main {
 }
 @include breakpoint(xlarge) {
   #main-menu {
-    border: none;
+    border-top: none;
+    border-bottom: 1px solid $black;
+    margin-left: $grid-gutter*3;
+    margin-right: $grid-gutter*2;
+    text-align: center;
 
     li {
       display: inline-block;
@@ -93,7 +107,10 @@ main {
 
     a {
       border: none;
+      font-size: rem-calc(24);
+      font-weight: 200;
       padding-left: 0;
+      margin: 0;
     }
   }
 }
@@ -107,13 +124,15 @@ main {
 
 .f-icon {
   width: rem-calc(40);
-  height: auto;
+  height: rem-calc(40);
   position: absolute;
-  top: rem-calc(-42);
+  top: rem-calc(10);
   right: rem-calc(10);
-  @include breakpoint(xxlarge) {
-    top: rem-calc(-30);
-    right: rem-calc(210);
+  @include breakpoint(xlarge) {
+    width: rem-calc(30);
+    height: rem-calc(30);
+    top: rem-calc(40);
+    right: rem-calc(110);
   }
 }
 // logos
@@ -183,11 +202,21 @@ main {
     }
   }
 }
+
+.bg-circle {
+  margin-left: $grid-gutter/4;
+  margin-right: $grid-gutter/4;
+
+  li {
+    list-style: none;
+  }
+}
 //contact-items
 
 .full {
   margin-left: -$grid-gutter/2;
-  margin-right: -$grid-gutter/4;
+  margin-right: -$grid-gutter/2;
+  padding: $grid-gutter/4;
 }
 
 .t-item {
@@ -195,7 +224,8 @@ main {
 }
 
 .people {
-  width: rem-calc(539);
+  width: 100%;
+  height: auto;
   padding: $grid-gutter/4;
 }
 @include breakpoint(large) {

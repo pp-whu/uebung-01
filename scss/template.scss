@@ -50,19 +50,10 @@ main {
 // header Menu Button
 
 .header-container {
-  @include breakpoint (xxlarge) {
     position: relative;
   }
-}
 
-.header-wrap {
-  padding-top: $grid-gutter;
-  @include breakpoint (xxlarge) {
-    padding-top: $grid-gutter/4;
-  }
-}
-
-.header-symbol {
+  .header-symbol {
   width: rem-calc(40);
   height: rem-calc(40);
   position: absolute;

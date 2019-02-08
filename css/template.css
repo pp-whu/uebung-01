@@ -2017,15 +2017,8 @@ main {
   max-width: 80rem;
   margin: 0 auto; }
 
-@media screen and (min-width: 90em) {
-  .header-container {
-    position: relative; } }
-
-.header-wrap {
-  padding-top: 3.33333rem; }
-  @media screen and (min-width: 90em) {
-    .header-wrap {
-      padding-top: 0.83333rem; } }
+.header-container {
+  position: relative; }
 
 .header-symbol {
   width: 2.22222rem;

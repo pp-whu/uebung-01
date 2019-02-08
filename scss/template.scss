@@ -48,41 +48,116 @@ main {
 }
 // layout
 // header Menu Button
-
-.button {
-  padding-top: $grid-gutter;
-  @include breakpoint (xlarge) {
-    padding-top: $grid-gutter/4;
-  }
-}
-
-.header-symbol {
-  width: rem-calc(40);
-  height: rem-calc(40);
-  position: absolute;
-  top: rem-calc(-46);
-  @include breakpoint (xlarge) {
-    display: none;
-  }
-}
-
 .menu-button {
-  margin: $grid-gutter/4;
+  cursor: pointer;
+  margin: $grid-column-gutter/4 $grid-column-gutter/8;
+
+  &.active {
+    .menu-button-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+.menu-button-box {
+  width: rem-calc(50);
+  height: rem-calc(50);
+  padding: rem-calc(10);
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: transform 0.25s;
+  background-color: $green;
 }
 
 .menu-button-label {
-  color: $white;
+  color: $black;
   vertical-align: middle;
 }
-// navigation
 
-.main-nav {
-  position: relative;
+.menu-button-inner {
+  display: block;
+  top: 100%;
+  margin-top: rem-calc(-27);
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &,
+  &::after,
+  &::before {
+    width: rem-calc(30);
+    height: rem-calc(5);
+    background-color: $black;
+    border-radius: rem-calc(1);
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+  }
+
+  &::before {
+    top: rem-calc(11);
+    right: rem-calc(0);
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
+
+  &::after {
+    bottom: rem-calc(11);
+    right: rem-calc(0);
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
 }
+@include breakpoint (xlarge) {
+  .menu-button {
+    display: none;
+  }
+}
+//header
+
+.header {
+  background: $green;
+}
+//Social Menu
+
+.social-nav {
+  position: absolute;
+  top: $grid-gutter/10;
+  right: $grid-gutter/4;
+}
+
+#social-menu {
+  list-style-type: none;
+
+  .symbol {
+    width: rem-calc(40);
+    height: rem-calc(40);
+  }
+}
+//Main Menu
 
 #main-menu {
   list-style-type: none;
-  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
   margin: 0;
 
   a {
@@ -99,43 +174,34 @@ main {
     }
   }
 }
+
 @include breakpoint(xlarge) {
   #main-menu {
-    border-top: none;
-        text-align: center;
-
     li {
       display: inline-block;
     }
 
     a {
       border: none;
-      font-size: rem-calc(24);
-      font-weight: 200;
       padding-left: 0;
-      margin: 0;
     }
   }
 }
-// social-nav
+//Logos
 
-.social-nav {
-  li {
-    list-style-type: none;
-  }
+.bb-logo {
+  padding: $grid-gutter*2 $grid-gutter/2;
+  text-align: center;
 }
 
-.f-icon {
-  width: rem-calc(40);
-  height: rem-calc(40);
-  position: absolute;
-  top: rem-calc(10);
-  right: rem-calc(10);
-  @include breakpoint(xlarge) {
-    width: rem-calc(30);
-    height: rem-calc(30);
-    top: rem-calc(40);
-    right: rem-calc(110);
+.pp-logo {
+  width: 100%;
+  text-align: center;
+  padding: $grid-gutter/4;
+
+  img {
+    width: rem-calc(120);
+    height: auto;
   }
 }
 // logos
@@ -163,7 +229,7 @@ main {
 }
 
 h1 {
-  @include breakpoint (xlarge) {
+  @include breakpoint (xxlarge) {
     font-size: rem-calc(71);
     text-align: center;
   }
@@ -227,23 +293,25 @@ h1 {
   }
 }
 //contact
+
 .t-item img {
   width: 100%;
   height: auto;
   margin-top: $grid-gutter;
 }
+
 .people {
   margin-top: $grid-gutter/6;
   padding: $grid-gutter/4;
 }
-
-@include breakpoint(xlarge) {
+@include breakpoint(xxlarge) {
   .team-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-left: -$grid-gutter/-2;
     margin-right: -$grid-gutter/4;
+
     .t-item {
       width: 50%;
       padding: $grid-gutter/4;

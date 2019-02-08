@@ -11,40 +11,42 @@
 
 <body>
   <div class="outer">
-    <header class="header">
-      <div class="page-wrap">
+    <header class="header green">
+      <div class="header-wrap ">
         <nav class="main-nav">
-          <button class="menu-button toggle" data-for="menu-wrap" title="Menü ein-/ausblenden" aria-haspopup="true" aria-expanded="false">
-              <span class="menu-button-box">
-                <span class="menu-button-inner"></span>
-              </span>
-              <span class="menu-button-label">Menü</span>
-        </button>
+          <button class="menu-button toggle" data-for="main-menu" title="Menü ein-/ausblenden" aria-haspopup="true" aria-expanded="false">
+            <svg role="img" class="header-symbol" aria-hidden="true" focusable="false">
+              <use xlink:href="img/icons.svg#menu"></use>
+            </svg>
+            <span class="menu-button-label show-for-sr">Menü</span>
+          </button>
           <ul id="main-menu">
-            <li><a href="">Leckeres</a></li>
-            <li><a href="">Leckeres</a></li>
-            <li><a href="">Leckeres</a></li>
-            <li><a href="">Leckeres</a></li>
-            <li><a href="">Leckeres</a></li>
-            <li><a href="">Leckeres</a></li>
+            <li><a href="#leckeres">Leckeres</a></li>
+            <li><a href="#erlesenes">Erlesenes</a></li>
+            <li><a href="#das-team">Das Team</a></li>
+            <li><a href="#unser-anspruch">Unser Anspruch</a></li>
+            <li><a href="#fuer-daheim">Für Dahoam</a></li>
+            <li><a href="#finde-uns">Finde uns</a></li>
           </ul>
         </nav>
-        <nav class="social-nav">
+        <nav class="social-nav ">
           <ul id="social-menu">
-            <li><a href="">
-              <svg role="img" class="symbol" aria-hidden="true" focusable="false">
-                <use xlink:href="img/icons.svg#facebook"></use>
-              </svg>
-            </a></li>
+            <li><a href="#">
+                <i class="a-icon">
+                  <svg role="img" class="f-icon" aria-hidden="true" focusable="false">
+                    <use xlink:href="/img/icons.svg#facebook">
+                    </use>
+                  </svg>
+                </i></a>
+            <li>
           </ul>
         </nav>
-        <div class="logo bb-logo">
-          <img src="img/bb_logo.png" alt="">
-        </div>
-        <div class="logo pp-logo">
-          <img src="img/pp_logo.svg" alt="">
-        </div>
       </div>
+      <div class="logos">
+        <img class="beans" src="/img/bb-logo.svg" alt="">
+        <img class="pfennigparade" src="/img/pp-logo.svg" alt="">
+      </div>
+
     </header>
     <main class="main">
       <section class="section wrap">

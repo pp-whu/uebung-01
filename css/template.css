@@ -2017,8 +2017,11 @@ main {
   max-width: 80rem;
   margin: 0 auto; }
 
-.header-container {
-  position: relative; }
+.header {
+  padding-top: 5rem; }
+  @media screen and (min-width: 90em) {
+    .header {
+      padding-top: 1.66667rem; } }
 
 .header-symbol {
   width: 2.22222rem;
@@ -2071,16 +2074,8 @@ main {
 
 .f-icon {
   width: 2.22222rem;
-  height: 2.22222rem;
-  position: absolute;
-  top: 0.55556rem;
-  right: 0.55556rem; }
-  @media screen and (min-width: 90em) {
-    .f-icon {
-      width: 1.66667rem;
-      height: 1.66667rem;
-      top: 2.22222rem;
-      right: 6.11111rem; } }
+  position: relative;
+  height: 2.22222rem; }
 
 .logos {
   width: 100%;

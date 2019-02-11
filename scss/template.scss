@@ -49,8 +49,11 @@ main {
 // layout
 // header Menu Button
 
-.header-container {
-    position: relative;
+.header {
+    padding-top: $grid-gutter*1.5;
+    @include breakpoint (xxlarge) {
+      padding-top: $grid-gutter/2;
+    }
   }
 
   .header-symbol {
@@ -122,18 +125,13 @@ main {
   }
 }
 
+.header-container {
+  // position: relative;
+}
 .f-icon {
   width: rem-calc(40);
+  position: relative;
   height: rem-calc(40);
-  position: absolute;
-  top: rem-calc(10);
-  right: rem-calc(10);
-  @include breakpoint(xxlarge) {
-    width: rem-calc(30);
-    height: rem-calc(30);
-    top: rem-calc(40);
-    right: rem-calc(110);
-  }
 }
 // logos
 

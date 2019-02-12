@@ -235,7 +235,7 @@ textarea {
   display: none !important; }
 
 .row {
-  max-width: 80rem;
+  max-width: 66.66667rem;
   margin-right: auto;
   margin-left: auto; }
   .row::before, .row::after {
@@ -1603,7 +1603,7 @@ a {
 
 hr {
   clear: both;
-  max-width: 80rem;
+  max-width: 66.66667rem;
   height: 0;
   margin: 1.11111rem auto;
   border-top: 0;
@@ -2014,7 +2014,7 @@ main {
   color: #fff; }
 
 .wrap {
-  max-width: 80rem;
+  max-width: 66.66667rem;
   margin: 0 auto; }
 
 .header {
@@ -2022,6 +2022,10 @@ main {
   @media screen and (min-width: 90em) {
     .header {
       padding-top: 1.66667rem; } }
+
+.header-bar {
+  position: relative;
+  border-bottom: 1px solid #000; }
 
 .header-symbol {
   width: 2.22222rem;
@@ -2069,12 +2073,15 @@ main {
       padding-left: 0;
       margin: 0; } }
 
-.social-nav li {
-  list-style-type: none; }
+.social-nav {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .social-nav li {
+    list-style-type: none; }
 
 .f-icon {
   width: 2.22222rem;
-  position: relative;
   height: 2.22222rem; }
 
 .logos {

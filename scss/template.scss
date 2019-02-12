@@ -55,7 +55,10 @@ main {
       padding-top: $grid-gutter/2;
     }
   }
-
+.header-bar {
+  position: relative;
+  border-bottom: 1px solid $black;
+}
   .header-symbol {
   width: rem-calc(40);
   height: rem-calc(40);
@@ -120,17 +123,16 @@ main {
 // social-nav
 
 .social-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
   li {
     list-style-type: none;
   }
 }
 
-.header-container {
-  // position: relative;
-}
 .f-icon {
   width: rem-calc(40);
-  position: relative;
   height: rem-calc(40);
 }
 // logos

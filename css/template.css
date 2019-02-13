@@ -2075,10 +2075,14 @@ main {
 
 .social-nav {
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: -2.5rem;
+  right: 0.55556rem; }
   .social-nav li {
     list-style-type: none; }
+  @media screen and (min-width: 90em) {
+    .social-nav {
+      top: 2.38889rem;
+      right: 0; } }
 
 .f-icon {
   width: 2.22222rem;
@@ -2117,6 +2121,8 @@ h1 p {
 .slider {
   margin-left: -1.66667rem;
   margin-right: -1.66667rem; }
+  .slider img {
+    width: 100%; }
 
 .accordion .a-link {
   background: #becb00;
@@ -2145,11 +2151,14 @@ h1 p {
   .accordion .columns-2 .a-price {
     width: 20%; }
 
+.black {
+  position: relative; }
+
 .bg-circle {
-  margin-left: 0.83333rem;
-  margin-right: 0.83333rem; }
-  .bg-circle li {
-    list-style: none; }
+  z-index: 1; }
+  .bg-circle img {
+    position: absolute;
+    top: 0; }
 
 .t-item img {
   width: 100%;

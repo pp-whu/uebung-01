@@ -50,16 +50,18 @@ main {
 // header Menu Button
 
 .header {
-    padding-top: $grid-gutter*1.5;
-    @include breakpoint (xxlarge) {
-      padding-top: $grid-gutter/2;
-    }
+  padding-top: $grid-gutter*1.5;
+  @include breakpoint (xxlarge) {
+    padding-top: $grid-gutter/2;
   }
+}
+
 .header-bar {
   position: relative;
   border-bottom: 1px solid $black;
 }
-  .header-symbol {
+
+.header-symbol {
   width: rem-calc(40);
   height: rem-calc(40);
   position: absolute;
@@ -124,10 +126,15 @@ main {
 
 .social-nav {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: rem-calc(-45);
+  right: rem-calc(10);
+
   li {
     list-style-type: none;
+  }
+  @include breakpoint (xxlarge) {
+    top: rem-calc(43);
+    right: 0;
   }
 }
 
@@ -179,6 +186,10 @@ h1 {
 .slider {
   margin-left: -$grid-gutter/2;
   margin-right: -$grid-gutter/2;
+
+  img {
+    width: 100%;
+  }
 }
 
 .accordion {
@@ -214,15 +225,20 @@ h1 {
     }
   }
 }
-
+.black {
+  position: relative;
+}
 .bg-circle {
-  margin-left: $grid-gutter/4;
-  margin-right: $grid-gutter/4;
+  z-index: 1;
+  
 
-  li {
-    list-style: none;
+
+img {
+    position: absolute;
+    top: 0;
   }
 }
+
 //contact
 
 .t-item img {
